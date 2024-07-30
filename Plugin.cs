@@ -25,8 +25,7 @@ namespace BossDrops
         public override Version Version => new Version(1, 0, 0, 0);
 
         Dictionary<string, bool> defeatedBosses = new Dictionary<string, bool>();
-        int checkEoWTicks = 0;
-
+        
         Dictionary<int, string> bossIds = new Dictionary<int, string>
         {
                 {50, "KS" },
@@ -54,11 +53,12 @@ namespace BossDrops
                 {398, "ML"},
         };
 
+        int ticksElapsed = 0;
         int dontDropTicks = 0;
 
         // Eater of Worlds is very problematic so have to do this
         int[] EoWIds = new int[] { 13, 14, 15 };
-        int ticksElapsed = 0;
+        int checkEoWTicks = 0;
         Vector2 EoWPos;
 
         public class ConfigData
