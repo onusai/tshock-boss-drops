@@ -219,7 +219,7 @@ namespace BossDrops
         {
             
 
-            TShock.Utils.Broadcast(String.Format("Killed {0}", id), Color.Yellow);
+            //TShock.Utils.Broadcast(String.Format("Killed {0}", id), Color.Yellow);
             foreach(int itemId in config.DropItems[id])
             {
                 Item.NewItem(null, pos, Vector2.Zero, itemId, 1, false, 0, true, false);
