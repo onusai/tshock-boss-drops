@@ -1,0 +1,6 @@
+.
+.vs
+obj/
+bin/Debug/net6.0/BossDrops.deps.json
+bin/Debug/net6.0/BossDrops.pdb
+bin/Debug/net6.0/HttpServer.dll
