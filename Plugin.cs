@@ -134,7 +134,6 @@ namespace BossDrops
         void OnGameUpdate(EventArgs args)
         {
             // annoying workaround for eow
-            ticksElapsed += 1;
             if (ticksElapsed < 60)
             {
                 ticksElapsed += 1;
