@@ -66,26 +66,26 @@ namespace BossDrops
             public bool Enabled { get; set; } = true;
             public bool DropOnlyOnFirstKill { get; set; } = false;
 
-            public Dictionary<string, int[]> DropItems { get; set; } = new Dictionary<string, int[]>
+            public Dictionary<string, string[]> DropItems { get; set; } = new Dictionary<string, string[]>
             {
-                {"KS", new int[]{4022, 3532, 499}},
-                {"EoC", new int[]{74}},
-                {"BoC", new int[]{}},
-                {"EoW", new int[]{}},
-                {"QB", new int[]{}},
-                {"Skeletron", new int[]{}},
-                {"Deerclops", new int[]{}},
-                {"WoF", new int[]{}},
-                {"QS", new int[]{}},
-                {"Destroyer", new int[]{}},
-                {"Twins", new int[]{}},
-                {"Prime", new int[]{}},
-                {"Plantera", new int[]{}},
-                {"Duke", new int[]{}},
-                {"Empress", new int[]{}},
-                {"Golem", new int[]{}},
-                {"Cultist", new int[]{}},
-                {"ML", new int[]{}},
+                {"KS", new string[]{"4022", "3532:1", "499:69"}},
+                {"EoC", new string[]{"74:12"}},
+                {"BoC", new string[]{}},
+                {"EoW", new string[]{}},
+                {"QB", new string[]{}},
+                {"Skeletron", new string[]{}},
+                {"Deerclops", new string[]{}},
+                {"WoF", new string[]{}},
+                {"QS", new string[]{}},
+                {"Destroyer", new string[]{}},
+                {"Twins", new string[]{}},
+                {"Prime", new string[]{}},
+                {"Plantera", new string[]{}},
+                {"Duke", new string[]{}},
+                {"Empress", new string[]{}},
+                {"Golem", new string[]{}},
+                {"Cultist", new string[]{}},
+                {"ML", new string[]{}},
             };
         }
 
@@ -219,9 +219,13 @@ namespace BossDrops
             
 
             //TShock.Utils.Broadcast(String.Format("Killed {0}", id), Color.Yellow);
-            foreach(int itemId in config.DropItems[id])
+            foreach(string itemStr in config.DropItems[id])
             {
-                Item.NewItem(null, pos, Vector2.Zero, itemId, 1, false, 0, true, false);
+                string[] parts = itemStr.Split(':');
+                int itemId = int.Parse(parts[0]);
+                int quantity = parts.Length > 1 ? int.Parse(parts[1]) : 1;
+                
+                Item.NewItem(null, pos, Vector2.Zero, itemId, quantity, false, 0, true, false);
             }
             
         }
