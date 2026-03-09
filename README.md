@@ -110,4 +110,4 @@ Here's a basic example of the configuration file and possible formatting:
 ***
 
 ###
-[Download BossDrops.dll](https://github.com/onusai/tshock-boss-drops/raw/main/bin/Debug/net6.0/BossDrops.dll)
+[Download BossDrops.dll](https://github.com/onusai/tshock-boss-drops/raw/main/bin/Debug/net9.0/BossDrops.dll)

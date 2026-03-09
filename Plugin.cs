@@ -225,7 +225,7 @@ namespace BossDrops
                 int itemId = int.Parse(parts[0]);
                 int quantity = parts.Length > 1 ? int.Parse(parts[1]) : 1;
                 
-                Item.NewItem(null, pos, Vector2.Zero, itemId, quantity, false, 0, true, false);
+                Item.NewItem(null, pos, Vector2.Zero, itemId, quantity, false, 0, true);
             }
             
         }
